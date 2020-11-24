@@ -1,0 +1,91 @@
+/* The heart of the matter */
+/* COLOR PALETTE
+    PRIMARY #231942
+    SECONDARY #FFF6F5
+    EMPHASIS #EB5160
+    SECOND SECONDARY #4EDCC0*/
+#banner {
+  background: linear-gradient(
+    52deg,
+    rgba(59, 82, 73, 1) 10%,
+    rgba(81, 152, 114, 1) 100%
+  );
+}
+.main {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.column {
+  margin: 35px;
+  padding: 0;
+}
+
+.btn-proyecto {
+  padding: 5px;
+  margin: 10px;
+  border: 1px solid black;
+  background-color: white;
+  width: 120px;
+  color: black;
+}
+
+.btn-proyecto:hover {
+  background-color: #999999;
+  color: white;
+}
+
+.btn-active {
+  background-color: #efb810;
+  color: black;
+}
+
+.btn-active:hover,
+.btn-active:focus {
+  background-color: #efb810;
+  color: black;
+}
+
+.proyecto {
+  background-color: #999999;
+  color: white;
+}
+
+figure {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  filter: grayscale(1);
+}
+
+figure img {
+  width: 100%;
+  height: 100%;
+  filter: saturate(1.5);
+}
+
+figure::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  display: block;
+  content: "";
+  width: 0;
+  height: 0;
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+figure:hover {
+  animation: bloom ease-in-out 0.7s forwards;
+}
+
+figure:hover::before {
+  animation: circle 0.7s;
+}
